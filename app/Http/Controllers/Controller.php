@@ -19,9 +19,26 @@ class Controller extends BaseController
     public function testOrm(){
         $posts = Post::all();
         
-        foreach($posts as $post){
-            echo "<h1>".$post->title."</h1>";
-            echo "<h2>".$post->content."</h2>";
+        // foreach($posts as $post){           //consulta sql
+        //     echo "<h1>".$post->title."</h1>";
+        //     echo "<h2>".$post->user->name."</h2>";
+        //     echo "<span style='color:gray;'>{$post->category->name} - {$post->user->name}</span>";
+        //     echo "<h4>".$post->content."</h4>";
+        //     echo "<hr>";
+        // }
+
+        $categories = Category::all();
+        foreach($categories as $category){
+            echo "<h1>{$category->name}</h1>";
+
+            foreach($category->posts as $post){
+                echo "<h1>".$post->title."</h1>";
+                echo "<h2>".$post->user->name."</h2>";
+                echo "<span style='color:gray;'>{$post->category->name} - {$post->user->name}</span>";
+                echo "<h4>".$post->content."</h4>";
+            }
+            echo "<hr>";
+            
         }
         die();
     }
