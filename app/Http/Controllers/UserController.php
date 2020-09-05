@@ -11,7 +11,7 @@ class UserController extends Controller     //una api es una
         return "Accion de pruebas de UserController";
     }
 
-
+    
     public function register(Request $request){
         //Recoger los datos del usuario por POST
         $json = $request->input('json', null);
