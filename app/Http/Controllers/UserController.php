@@ -8,6 +8,7 @@ class UserController extends Controller     //una api es una
 {
     public function pruebas(Request $request){
         return "Accion de pruebas de UserController";
+        return "Accion de pruebas de UserController";
     }
 
 
